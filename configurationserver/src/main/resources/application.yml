@@ -1,0 +1,12 @@
+server:
+  port: 8888
+spring:
+  cloud:
+    config:
+      name: configServer
+      server:
+        git:
+          uri: https://github.com/priort/config-repo/
+          search-paths: licensingservice,organizationservice
+          username: priort
+          password: holw104MaIdu

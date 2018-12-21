@@ -1,0 +1,51 @@
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+
+#org:
+#  slf4j:
+#    simpleLogger:
+#      defaultLogLevel: DEBUG
+
+logging:
+  level:
+    root: INFO
+    com:
+      eagleeye: DEBUG
+
+#spring:
+#  cloud:
+#    stream:
+#      bindings:
+#        input:
+#          destination: organizationChangeTopic
+#          content-type: application/json
+#          group: licensingGroup
+#        binder:
+##          headerMapperBeanName: mapper
+#          zkNodes: localhost
+#          brokers: localhost
+#      kafka:
+#        binder:
+#          headerMapperBeanName: mapper
+
+spring:
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: organizationChangeTopic
+#          content-type: application/json
+          group: licensingGroup
+      kafka:
+        binder:
+          zkNodes: localhost
+          brokers: localhost
+          headerMapperBeanName: mapper
+

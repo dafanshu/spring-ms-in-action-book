@@ -1,0 +1,22 @@
+server:
+  port: 5555
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+zuul:
+  routes:
+    organizationservice: /org/**
+    licensingservice: /lic/**
+  ignored-services: '*'
+  prefix: '/api'
+
+logging:
+  level:
+    root: INFO
+    com:
+      eagleeye: DEBUG
